@@ -1,11 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors= require("cors");
-const uri =
-  "mongodb+srv://Tazim:3XbU2WfjxLdTdOFC@cluster0.oxjfe.mongodb.net/SocialUsers";
 const AuthRoutes = require("./routes/authRoutes");
+require("dotenv").config();
+const uri =process.env.MONGO;
 const app = express();
-
 app.use(express.json());
 app.use(cors());
 app.use(AuthRoutes);
